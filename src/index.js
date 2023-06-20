@@ -269,4 +269,6 @@ function appendCartList(x) {
 
 let x = window.matchMedia("(max-width: 600px)");
 appendCartList(x);
-x.addEventListener("resize", appendCartList);
+window.addEventListener("resize", function () {
+  appendCartList(x);
+});
