@@ -21,8 +21,7 @@ const mobBtn = document.getElementById("mob-cntrl");
 const cartNumRender = document.getElementById("cart-num");
 const cartTotalRender = document.getElementById("cart-total");
 const addToCartBtn = document.getElementById("add-cart");
-lb.style.display = "none";
-cartList.style.display = "none";
+
 let activeLbThumbnail = 0;
 // mobile slide
 let activeImg = 0;
@@ -33,8 +32,6 @@ let cartToggle = false;
 let isCartOpen = false;
 let cartFull = document.getElementById("cart-full");
 let cartEmpty = document.getElementById("cart-empty");
-// hide ful cart
-cartFull.style.display = "none";
 
 const handleClickOutside = (e) => {
   if (e.target !== cartbtn && !cartList.contains(e.target)) {
