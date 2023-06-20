@@ -200,8 +200,6 @@ header {
 }
 
 main {
-  height: 100vh;
-
   .flex {
     display: flex;
 
@@ -215,10 +213,12 @@ main {
       flex-direction: column;
       align-items: center;
       padding: 1.5rem;
+      height: fit-content;
     }
 
     .item_desc {
       padding: 5rem;
+      height: fit-content;
       p.company {
         color: var(--Orange);
         text-transform: uppercase;

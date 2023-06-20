@@ -180,9 +180,6 @@ header .header .right .avatar:hover {
   border-color: var(--Orange);
 }
 
-main {
-  height: 100vh;
-}
 main .flex {
   display: flex;
 }
@@ -195,9 +192,13 @@ main .flex .pbox-section {
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 main .flex .item_desc {
   padding: 5rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 main .flex .item_desc p.company {
   color: var(--Orange);
