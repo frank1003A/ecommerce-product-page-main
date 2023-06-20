@@ -632,6 +632,12 @@ main .lightbox-overlay .lightbox button#clb:hover img {
   transform: translate(-50%, -50%);
   display: none;
 */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
 .ham-overlay {
   position: fixed;
   display: none;
