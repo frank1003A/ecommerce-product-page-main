@@ -1,0 +1,743 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  font-family: "Kumbh Sans", sans-serif;
+  /* Primary*/
+  --Orange: hsl(26, 100%, 55%);
+  --Paleorange: hsl(25, 100%, 94%);
+  /* Neutral */
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black/*with 75% opacity for lightbox background*/: hsl(0, 0%, 0%);
+}
+
+*,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  padding: 0px 5rem;
+}
+
+.ham-btn {
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+}
+
+header {
+  z-index: 10;
+  top: 0;
+  position: relative;
+  padding: 0px 5rem;
+}
+header .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  padding: 1.5rem 0px;
+  border-bottom: 1px solid var(--Light-grayish-blue);
+}
+header .header .logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+header .header ul {
+  display: flex;
+  gap: 1rem;
+}
+header .header ul .closebtn {
+  display: none;
+  text-decoration: none;
+  color: #000;
+}
+header .header ul li {
+  display: inline;
+  padding-left: 20px;
+}
+header .header ul li a {
+  text-decoration: none;
+  color: var(--Dark-grayish-blue);
+}
+header .header .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+}
+header .header .right .cart {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+}
+header .header .right .cart:hover {
+  background: var(--Light-grayish-blue);
+}
+header .header .right .cart .icon-btn {
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+header .header .right .cart .icon-btn span.badge {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--Orange);
+  color: var(--White);
+  min-width: 15px;
+  height: 20px;
+  width: 15px;
+  max-height: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  justify-content: center;
+  font-weight: 700;
+  top: -5px;
+  right: -5px;
+}
+header .header .right .cart .desc {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 5px;
+  position: absolute;
+  right: -115px;
+  width: -moz-max-content;
+  width: max-content;
+  top: 50px;
+  background-color: white;
+  z-index: 80;
+  animation: slideUp-dec 0.5s ease 0s 1 normal forwards;
+}
+header .header .right .cart .desc div#cart-empty {
+  min-width: 320px;
+  min-height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  font-weight: 700;
+}
+header .header .right .cart .desc .head {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--Light-grayish-blue);
+  font-weight: 700;
+  color: black;
+}
+header .header .right .cart .desc .items {
+  padding: 1.5rem;
+}
+header .header .right .cart .desc .items .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+header .header .right .cart .desc .items .item img {
+  max-height: 40px;
+}
+header .header .right .cart .desc .items .item .description {
+  line-height: 1.5;
+}
+header .header .right .cart .desc .items .item .description .itemname {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--Grayish-blue);
+}
+header .header .right .cart .desc .items .item .description .itemprce {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--Grayish-blue);
+}
+header .header .right .cart .desc .items .item .description .itemprce span.total {
+  color: black;
+  font-weight: 700;
+}
+header .header .right .avatar {
+  max-height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+header .header .right .avatar:hover {
+  border-color: var(--Orange);
+}
+
+main {
+  height: 100vh;
+}
+main .flex {
+  display: flex;
+}
+main .flex section {
+  width: 50%;
+  height: 100vh;
+}
+main .flex .pbox-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+main .flex .item_desc {
+  padding: 5rem;
+}
+main .flex .item_desc p.company {
+  color: var(--Orange);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+main .flex .item_desc p.details {
+  margin-bottom: 20px;
+  font-size: small;
+  line-height: 2;
+  max-width: 400px;
+  color: var(--Dark-grayish-blue);
+}
+main .flex .item_desc h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+main .flex .item_desc .numb {
+  margin-bottom: 20px;
+}
+main .flex .item_desc .numb .amt {
+  font-size: 25px;
+  display: flex;
+  font-weight: 700;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+main .flex .item_desc .numb .amt .per {
+  font-size: 15px;
+  background-color: var(--Paleorange);
+  height: -moz-fit-content;
+  height: fit-content;
+  color: var(--Orange);
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+}
+main .flex .item_desc .numb p.discount {
+  text-decoration: line-through;
+  font-size: small;
+  font-weight: 700;
+  color: var(--Dark-grayish-blue);
+}
+main .flex .item_desc .counter_button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+main .flex .item_desc .counter_button .counter {
+  display: flex;
+  align-items: center;
+  background-color: var(--Light-grayish-blue);
+  max-height: 50px;
+  border-radius: 8px;
+  min-width: 150px;
+  justify-content: space-around;
+}
+main .flex .item_desc .counter_button .counter button {
+  background: none;
+  border: none;
+  font-size: 35px;
+  padding: 0.5rem;
+  color: var(--Orange);
+  cursor: pointer;
+}
+main .flex .item_desc .counter_button .counter .num {
+  font-weight: 700;
+  font-size: 20px;
+}
+main .previewbox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  /* cart for smaller screens*/
+}
+main .previewbox .controls#mob-cntrl {
+  display: none;
+}
+main .previewbox .desc {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 5px;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: white;
+  z-index: 80;
+  animation: slideUp-mob 0.5s ease 0s 1 normal forwards;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+main .previewbox .desc div#cart-empty {
+  min-width: 320px;
+  min-height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  font-weight: 700;
+}
+main .previewbox .desc .head {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--Light-grayish-blue);
+  font-weight: 700;
+  color: black;
+}
+main .previewbox .desc .items {
+  padding: 1.5rem;
+}
+main .previewbox .desc .items .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+main .previewbox .desc .items .item img {
+  max-height: 40px;
+}
+main .previewbox .desc .items .item .description {
+  line-height: 1.5;
+}
+main .previewbox .desc .items .item .description .itemname {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--Grayish-blue);
+}
+main .previewbox .desc .items .item .description .itemprce {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--Grayish-blue);
+}
+main .previewbox .desc .items .item .description .itemprce span.total {
+  color: black;
+  font-weight: 700;
+}
+main .previewbox .controls button {
+  position: absolute;
+  top: 30%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .previewbox .controls button img {
+  height: 20px;
+  width: 15px;
+  border-radius: 50px;
+}
+main .previewbox .controls button#next {
+  right: -20px;
+}
+main .previewbox .controls button#prev {
+  left: -20px;
+}
+main .previewbox .controls button:hover img {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(17%) saturate(6310%) hue-rotate(348deg) brightness(103%) contrast(101%);
+}
+main .previewbox .preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  max-width: 350px;
+  flex-direction: row-reverse;
+}
+main .previewbox .preview #cartlist-des {
+  display: none;
+}
+main .previewbox .preview > img {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+main .previewbox .preview .preview.show {
+  transform: translateX(0%);
+}
+main .previewbox .preview .overlay_3 {
+  position: absolute;
+  background: rgba(57, 57, 57, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+main .previewbox .preview .overlay_3 .icon {
+  color: var(--Orange);
+  background: var(--White);
+  cursor: pointer;
+  display: flex;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 1rem 0px;
+  cursor: pointer;
+  align-items: center;
+}
+main .previewbox .preview .overlay_3 .icon img {
+  max-height: 40px;
+}
+main .previewbox .preview:hover .overlay_3 {
+  transform: scale(1);
+}
+main .previewbox .preview img,
+main .previewbox .lb-preview img {
+  width: 350px;
+  border-radius: 10px;
+}
+main .previewbox .lb-preview {
+  position: relative;
+  display: flex;
+  max-width: 350px;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+main .previewbox .lb-preview img {
+  width: 350px;
+  border-radius: 10px;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+main .previewbox .tn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  border-radius: 10px;
+}
+main .previewbox .tn .img-overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5607843137);
+  inset: 1;
+  cursor: pointer;
+}
+main .previewbox .tn:hover .img-overlay {
+  inset: 0;
+}
+main .previewbox .active-tn {
+  border: 2px solid var(--Orange);
+}
+main .previewbox .active-tn .img-overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5607843137);
+  inset: 0;
+  cursor: pointer;
+}
+main .previewbox .thumbnails,
+main .previewbox .lb-thumbnails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.6s ease;
+}
+main .previewbox .thumbnails img,
+main .previewbox .lb-thumbnails img {
+  max-height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .lightbox-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7294117647);
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .lightbox-overlay .lightbox {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .lightbox-overlay .lightbox button#clb {
+  background: none;
+  border: none;
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+main .lightbox-overlay .lightbox button#clb img {
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+main .lightbox-overlay .lightbox button#clb:hover img {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(17%) saturate(6310%) hue-rotate(348deg) brightness(103%) contrast(101%);
+}
+
+.box {
+  box-shadow: 18px 19px 60px -7px hsl(26, 100%, 55%);
+}
+
+.btn {
+  background-color: var(--Orange);
+  color: var(--White);
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+.btn img {
+  filter: brightness(0) invert(1);
+}
+.btn:hover {
+  background-color: hsla(26, 100%, 55%, 0.69);
+}
+
+.slide-in {
+  transform: translateX(100%);
+}
+
+.slide-out {
+  transform: translateX(0%);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(250px);
+  }
+}
+@keyframes pan {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slide-ob {
+  animation: slide-out-btm 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes slide-out-btm {
+  0% {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp-dec {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp-mob {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+/*
+/* cart for smaller screens
+.desc {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 5px;
+  position: absolute;
+  width: max-content;
+  background-color: white;
+  z-index: 80;
+  animation: scaleForwardVt 0.5s ease 0s 1 normal forwards;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+*/
+.ham-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  header {
+    padding: 0px;
+  }
+  header .header {
+    gap: 10px;
+    padding: 1rem 10px;
+  }
+  header .header .ham-btn {
+    display: block;
+  }
+  header .header ul {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  header .header ul .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    display: block;
+  }
+  header .header .right .cart .desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  body {
+    padding: 0px;
+  }
+  main .flex {
+    flex-direction: column;
+  }
+  main .flex .pbox-section {
+    padding: 0px;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  main .flex .pbox-section .previewbox {
+    margin-top: 0px;
+  }
+  main .flex .pbox-section .previewbox .controls {
+    display: block !important;
+  }
+  main .flex .pbox-section .previewbox .controls button {
+    top: 40%;
+  }
+  main .flex .pbox-section .previewbox .controls button#mob-prev {
+    left: 10px;
+  }
+  main .flex .pbox-section .previewbox .controls button#mob-next {
+    right: 10px;
+  }
+  main .flex .pbox-section .previewbox .preview {
+    width: 100%;
+    max-width: none;
+    border-radius: 0px;
+  }
+  main .flex .pbox-section .previewbox .preview .overlay_3 {
+    display: none;
+  }
+  main .flex .pbox-section .previewbox .preview img {
+    width: 100% !important;
+    border-radius: 0px;
+  }
+  main .flex .pbox-section .previewbox .thumbnails {
+    display: none;
+  }
+  main .flex .item_desc {
+    padding: 0px;
+    width: 100%;
+    padding: 20px 2rem;
+  }
+  main .flex .item_desc h1 {
+    font-size: 30px;
+  }
+  main .flex .item_desc .counter_button {
+    flex-direction: column;
+  }
+  main .flex .item_desc .counter_button .counter {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
