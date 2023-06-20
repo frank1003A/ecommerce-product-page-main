@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://jam.dev/c/fe8398ef-d25f-468f-b4ba-7166e1365ebb)
+![](./src/screenshot.png)
 
 ### Links
 

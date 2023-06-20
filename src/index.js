@@ -265,9 +265,7 @@ function appendCartList(x) {
   if (x.matches) {
     // If media query matches
     pbox.appendChild(cartList);
-    //headCart.removeChild(cartList);
   } else {
-    //pbox.removeChild(cartList);
     headCart.appendChild(cartList);
   }
 }
